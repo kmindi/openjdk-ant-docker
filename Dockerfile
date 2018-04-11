@@ -10,8 +10,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends wget
 
 # Download and extract apache ant to opt folder
 RUN wget --no-check-certificate --no-cookies http://archive.apache.org/dist/ant/binaries/apache-ant-${ANT_VERSION}-bin.tar.gz \
-    && wget --no-check-certificate --no-cookies http://archive.apache.org/dist/ant/binaries/apache-ant-${ANT_VERSION}-bin.tar.gz.md5 \
-    && echo "$(cat apache-ant-${ANT_VERSION}-bin.tar.gz.md5) apache-ant-${ANT_VERSION}-bin.tar.gz" | md5sum -c \
+    && wget --no-check-certificate --no-cookies http://archive.apache.org/dist/ant/binaries/apache-ant-${ANT_VERSION}-bin.tar.gz.sha512 \
+    && echo "$(cat apache-ant-${ANT_VERSION}-bin.tar.gz.sha512) apache-ant-${ANT_VERSION}-bin.tar.gz" | sha512sum -c \
     && tar -zvxf apache-ant-${ANT_VERSION}-bin.tar.gz -C /opt/ \
     && ln -s /opt/apache-ant-${ANT_VERSION} /opt/ant \
     && rm -f apache-ant-${ANT_VERSION}-bin.tar.gz \
