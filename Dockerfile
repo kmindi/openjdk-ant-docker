@@ -5,6 +5,9 @@ MAINTAINER Kai Mindermann
 ENV ANT_VERSION=1.10.3
 ENV ANT_HOME=/opt/ant
 
+# Install wget 
+RUN apt-get update && apt-get install -y --no-install-recommends wget 
+
 # Download and extract apache ant to opt folder
 RUN wget --no-check-certificate --no-cookies http://archive.apache.org/dist/ant/binaries/apache-ant-${ANT_VERSION}-bin.tar.gz \
     && wget --no-check-certificate --no-cookies http://archive.apache.org/dist/ant/binaries/apache-ant-${ANT_VERSION}-bin.tar.gz.md5 \
