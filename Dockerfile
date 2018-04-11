@@ -15,7 +15,7 @@ RUN wget --no-check-certificate --no-cookies http://archive.apache.org/dist/ant/
     && tar -zvxf apache-ant-${ANT_VERSION}-bin.tar.gz -C /opt/ \
     && ln -s /opt/apache-ant-${ANT_VERSION} /opt/ant \
     && rm -f apache-ant-${ANT_VERSION}-bin.tar.gz \
-    && rm -f apache-ant-${ANT_VERSION}-bin.tar.gz.md5
+    && rm -f apache-ant-${ANT_VERSION}-bin.tar.gz.sha512
 
 # add executables to path
 RUN update-alternatives --install "/usr/bin/ant" "ant" "/opt/ant/bin/ant" 1 && \
